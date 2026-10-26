@@ -45,6 +45,8 @@ public:
         cout << "\nCircle прокрутили.";
     }
     
+    virtual string isA() { return "Circle"; }
+
 
     ~Circle() {
         cout << "\nУдаляется Circle.";
