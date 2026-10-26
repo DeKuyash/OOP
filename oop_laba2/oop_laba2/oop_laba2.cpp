@@ -55,6 +55,63 @@ public:
 
 
 
+class AlphaCircle : public Circle {
+public:
+    unsigned char alpha = 0;
+
+    AlphaCircle() {
+        cout << "\nСоздается AlphaCircle конструктором по умолчанию.";
+    }
+
+    AlphaCircle(int x, int y, int radius, char alpha) : Circle(x, y, radius) {
+        this->alpha = alpha;
+        cout << format("\nСоздается AlphaCircle: x = {}, y = {}, r = {}, alpha = {}", this->x, this->y, this->radius, this->alpha);
+    }
+
+
+    string isA() override { return "AlphaCircle"; }
+
+
+    ~AlphaCircle() {
+        cout << "\nУдаляется AlphaCircle.";
+    }
+};
+
+
+
+class ColorCircle : public Circle {
+public:
+    string color = "without";
+
+    ColorCircle() {
+        cout << "\nСоздается ColorCircle конструктором по умолчанию.";
+    }
+
+    ColorCircle(int x, int y, int radius, string color) : Circle(x, y, radius) {
+        this->color = color;
+        cout << format("\nСоздается ColorCircle: x = {}, y = {}, r = {}, color = {}", this->x, this->y, this->radius, this->color);
+    }
+
+    ColorCircle(int x, int y) : Circle(x, y) {
+        cout << format("\nСоздается ColorCircle: x = {}, y = {}, r = {}, color = {}", this->x, this->y, this->radius, this->color);
+    }
+
+
+    void spin() {
+        // Circle::spin();
+        cout << "\nColorCircle прокрутили.";
+    }
+
+
+    string isA() override { return "ColorCircle"; }
+
+
+    ~ColorCircle() {
+        cout << "\nУдаляется ColorCircle.";
+    }
+};
+
+
 
 int main() {
     setlocale(LC_ALL, "Russian");
