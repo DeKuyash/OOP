@@ -113,8 +113,41 @@ public:
 
 
 
+class Spinner {
+public:
+    Circle obj1;
+    Circle* obj2;
+
+    Spinner() {
+        cout << "\nСоздается Spinner конструктором по умолчанию.";
+    }
+
+    Spinner(Circle& obj1, Circle* obj2) {
+        this->obj1 = obj1;
+        this->obj2 = obj2;
+        cout << format("\nСоздается Spinner: первый круг на нем - {}, второй круг на нем - {}", this->obj1.isA(), this->obj2->isA());
+    }
+
+
+    void spin() {
+        this->obj1.spin();
+        this->obj2->spin();
+    }
+};
+
+
+
 int main() {
     setlocale(LC_ALL, "Russian");
+
+    ColorCircle obj1;
+    AlphaCircle* obj2 = new AlphaCircle();
+
+    Spinner* spinrs = new Spinner(obj1, obj2);
+
+    spinrs->spin();
+
+    delete(obj2);
 
     return 0;
 }
