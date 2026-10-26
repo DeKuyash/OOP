@@ -1,0 +1,3 @@
+﻿  oop_laba2.cpp
+C:\Users\Компьютер\source\repos\oop_laba2\oop_laba2\oop_laba2.cpp(6,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  oop_laba2.vcxproj -> C:\Users\Компьютер\source\repos\oop_laba2\x64\Debug\oop_laba2.exe
